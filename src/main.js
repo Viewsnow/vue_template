@@ -6,6 +6,10 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+// 引入core.config.js
+import core from "@/core/core.config"
+Vue.use(core);
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
