@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*{
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  word-wrap:break-word;
+}
+html {touch-action: manipulation;cursor: default;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+*{//去除手机页面点击元素的阴影
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+.nowrap{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.cover{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.button{
+  background: #29b8f8;
+  color: #fff;
+  font-size: s(14);
+  padding:s(5) s(15);
+  border-radius:s(3);
+  cursor:pointer;
+  @include vc;
+  i{
+    @include vc;
+  }
+}
+.edit{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border-radius:100;
+  @include wh(120,120);
+  @include ico(growth);
+  background-size: 100%;
+  background-position:center 69.7%;
+  cursor: pointer;
+  z-index: 1;
+}
+.button.no{
+  cursor: default;
+  background: #82cef5;
+}
+.select{
+  border: 1px solid $b;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: s(29);
+  font-size: s(14);
+  cursor: pointer;
+  .name{
+    padding: s(4) s(25) s(6) s(8);
+    max-width: s(200);
+    min-width: s(100);
+    @extend .nowrap;
+  }
+  ul{
+    background: #fff;
+    position: relative;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-top: -3px;
+    border: 1px solid $b;
+    box-sizing:inherit;
+    padding: s(5) 0;
+    li{
+      padding: s(2) s(8);
+      @extend .nowrap;
+    }
+    li:hover{
+      background:#82cef5;
+      color: #fff;
+    }
+    li.hover{
+      background:$blue;
+      color: #fff;
+    }
+
+  }
+}
+.select:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right:s(3);
+  bottom: 0;
+  width: s(20);
+  @include ico(growth);
+  background-position: center 23.5%;
+}
+
+.dialog.edit{
+  img{
+    max-width:s(700);
+    max-height:s(400);
+  }
+}
+.tl{text-align: left;}
+.txtp{
+  width: 500px;
+  margin-top: 10px;
+  font-size: s(16);
+  text-align: right;
+}
+
+@media screen and (max-height: 900px) {
+    body{
+      header{
+        height: s(60) !important;
+        &>div{
+          transform: scale(0.8);
+        }
+      }
+      footer{
+        height: s(40) !important;
+        line-height: s(40) !important;
+        font-size: s(12) !important;
+      }
+      .wrap{
+        top: s(80) !important;
+        margin-bottom:s(60) !important;
+      }
+      .pages{
+        margin-top: s(-20) !important;
+      }
+    }
+}

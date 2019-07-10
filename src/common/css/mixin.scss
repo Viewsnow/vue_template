@@ -1,0 +1,100 @@
+@charset "UTF-8";
+// 背景图片地址和大小
+@mixin bis($url) {
+	background-image: url("../../assets/images/"+$url);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+@mixin backgroundImg($url,$left,$top) {
+	background-image: url("../../assets/images/"+$url);
+	background-position: $left $top;
+	background-repeat: no-repeat;
+}
+
+@mixin ico($url){
+	background: url("../../assets/images/"+$url+"/ico.png") no-repeat;
+}
+@mixin ico1($url){
+	background: url("../assets/images/"+$url+"/ico.png") no-repeat;
+}
+@mixin radius($radius){
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin shadow(){
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.10);
+	background: $white;
+}
+//定位全屏
+@mixin allcover{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+}
+@mixin top{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+@mixin bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+//定位上下左右居中
+@mixin center {
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+//定位上下居中
+@mixin ct {
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+//定位左右居中
+@mixin cl {
+	position: absolute;
+	left: 50%;
+  transform: translateX(-50%);
+}
+//居中
+@mixin vc {
+	display: inline-block;
+	vertical-align:middle;
+}
+//宽高
+@mixin wh($width, $height){
+	width:$width+px;
+	height:$height+px;
+}
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size:$size+px;
+	color: $color;
+}
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+	display: flex;
+	justify-content: $type;
+}
+@mixin fjt{
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+}
+
+// flexbal
+$fontSize:75;
+@function r($px){
+	@return $px/$fontSize+rem;
+}

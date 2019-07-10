@@ -1,0 +1,37 @@
+
+//边框
+
+$b:#e6eaec;
+// 灰色
+$hui9:#999;
+$hui6:#666;
+$blue:#29b8f8;
+$white:#fff;
+.white{background: $white;}
+.f9{color: $hui9;}
+.f6{color: $hui6;}
+.fblue{color: $blue;}
+//常用字号
+.s8{font-size:r(16);}
+.s10{
+  font-size: 12px;
+  i{
+    transform: scale(0.9);
+    display: block;
+    white-space: nowrap;
+  }
+}
+.s11{font-size:r(22);}
+.s12{font-size:r(24);}
+.s13{font-size:r(26);}
+.s14{font-size:r(28);}
+.s15{font-size:r(30);}
+.s16{font-size:r(32);}
+.s18{font-size:r(36);}
+.s20{font-size:r(40);}
+.s22{font-size:r(44);}
+.s24{font-size:r(48);}
+.s36{font-size:r(72);}
+.mT05{margin-top:r(10);}
+.mT1{margin-top:r(20);}
+.mT2{margin-top:r(40);}
