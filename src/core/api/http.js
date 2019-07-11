@@ -8,7 +8,7 @@ const baseURL = location.host.indexOf(".com") != -1 ? "" : "/apis";
 
 var instance = axios.create({
 	// 设置主机
-	baseURL,
+	baseURL, 
 	//设置超时时间
 	timeout: 200000,
 	// 跨域  

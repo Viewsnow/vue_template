@@ -12,7 +12,10 @@ const routers = new Router({
 		children: [{
 			path: 'info',
 			name: 'info',
-			component: resolve => require(['@/components/main/info'], resolve)
+			component: resolve => require(['@/components/main/info'], resolve),
+			meta:{
+				keepAlive:true
+			}
 		}, {
 			path: 'news',
 			name: 'news',

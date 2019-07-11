@@ -5,6 +5,15 @@
 				<router-link :to="item.url">{{item.name}}</router-link>
 			</li>
 		</ul>
+		<div>
+			<h1>数量:{{$store.state.num}}</h1>
+			<h1>单价:{{$store.state.price}}</h1>
+			<h1>总价:{{$store.getters.count}}</h1>
+			<button @click="add">add</button>
+		</div>
+		<div id="aa">
+			
+		</div>
 	</div>
 </template>
 
@@ -22,22 +31,23 @@
 				}, {
 					url: "/test",
 					name: "测试页"
-				}]
+				}],
+				num:""
 			}
 		},
 		methods: {
-			cli(e) {
-				var arr=e.currentTarget.parentNode.children;
-				for(var i=0;i<arr.length;i++){				
-					arr[i].children[0].style.color="#0c0c0c";
-				}
-				e.target.style.color="red";
+			add(){
+				this.$store.commit("add","马作的卢飞快,弓如霹雳弦惊,了却君王天下事,赢得生前身后名,可怜白发生.")
 			}
+			
+		},
+		mounted(){
+			//this.num=this.$store.state.num
 		}
 	}
 </script>
 
-<style scoped>
+<style scoped >
 	ul {
 		overflow: hidden;
 		border: 1px solid #ccc;
@@ -56,5 +66,11 @@
 		text-decoration: none;
 		font: 26px/30px "华文行楷";
 		
+	}
+	h1{
+		font:30px/60px ""
+	}
+	#aa{
+		height:30px
 	}
 </style>

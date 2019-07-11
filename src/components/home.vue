@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
     <lay_head></lay_head>
-    <router-view></router-view>
+    <keep-alive>
+    	<router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    	<router-view v-if="!$route.meta.keepAlive"></router-view>
+    	   <!-- keepAlive true 禁止重复加载  false不禁止-->
   </div>
 </template>
 
@@ -16,6 +20,11 @@ export default {
   },
   components:{
   	lay_head
+  },
+  mounted(){
+  	this.$eventHub.$on("test",(res)=>{
+  		console.log(res)
+  	})
   }
 }
 </script>

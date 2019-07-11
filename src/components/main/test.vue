@@ -16,11 +16,15 @@
 		
 		<!--测试core里的全局组件-->
 		<item1></item1>
+		
+		
+		<!--测试core里的eventHub的组件通信-->
+		<button @click="tongxin">test</button>
 	</div>
 </template>
 
 <script>
-	/*export default{
+	export default{
 		data(){
 			return{
 				
@@ -28,14 +32,17 @@
 		},
 		methods:{
 			//函数内部内部跳转;
-			test(){
+			/*test(){
 				this.$router.push({path:'/info',query:{id:123,name:'潇洒哥'}})
 			},
 			test1(){
 				this.$router.push({name:'info',params:{id:123,name:'潇洒哥'}})
-			}	
+			}*/
+			tongxin(){
+				this.$eventHub.$emit("test","八百里分麾下炙,五十弦翻塞外声")
+			}
 		}
-	}*/
+	}
 </script>
 
 <style scoped>
