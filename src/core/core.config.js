@@ -17,6 +17,6 @@ export default (Vue)=>{
 	Vue.prototype.$global=global;
 	//ajax的各种函数
 	Vue.prototype.$apis=apis;
-	//跨组件通信  在老祖宗原型上实例化一个Vue
+	//跨组件通信  在老祖宗原型上实例化一个Vue 定义全局事件对象
 	Vue.prototype.$eventHub=new Vue();
 }

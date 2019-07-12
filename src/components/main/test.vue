@@ -12,7 +12,7 @@
 		
 		
 		<!--测试core里的全局指令-->
-		<button v-test>test</button>
+		<mint_btn v-test type="primary">test</mint_btn>
 		
 		<!--测试core里的全局组件-->
 		<item1></item1>

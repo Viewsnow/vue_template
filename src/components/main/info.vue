@@ -5,25 +5,29 @@
 			{{str|setStr(14)}}
 		</div>
 		<p>{{title}}</p>
+		<button @click="test1">加载中</button>
+		<br />
+		<i class="fa fa-heart-o fa-2x">{{str1}}</i> 
 	</div>
 </template>
 
 <script>
 	import axios from "axios";
-	import {mapState,mapGetters,mapActions,mapMutations} from "vuex"
+	import { mapState, mapGetters, mapActions, mapMutations } from "vuex"
 	export default {
 		data() {
 			return {
 				str: "世间男儿皆有愿，愿得一人心，白首不相离。",
-				topic:[],
-				title:""
+				topic: [],
+				title: ""
 			}
 		},
-		computed:{
-			 // 声明属性
-			 ...mapState(["isTopic"])
+		computed: {
+			// 声明属性
+			...mapState(["isTopic","str1"]),
+			...mapGetters(["count"])
 		},
-		mounted() {		
+		mounted() {
 			//测试Vuex的异步方法之一
 			//this.$store.dispatch("test","人生当苦无妨,良人当归即好")
 
@@ -42,29 +46,29 @@
 					// 两个请求现在都执行完成
 					console.log(Nov, Rec)
 				}));*/
-			
+
 			//测试Vuex的异步方法之二
 			/*this.$store.dispatch("test")
 			setTimeout(()=>{
 				this.topic=this.$store.state.topic;
 			},20000)*/
-			
-			
+
 			this.$store.dispatch("test")
 		},
-		methods:{
-			
+		methods: {
+			...mapMutations(["add"]),
+			...mapActions(["test", "test1"])
 		},
-		watch:{
-			isTopic(){
-				var str=""
-				 //console.log(this.$store.state.topic);
-				 this.topic=this.$store.state.topic;
-				 for(var i=0;i<this.topic.length;i++){
-				 	str=this.topic[0]
-				 }
-				 console.log(str);
-				 this.title=str;
+		watch: {
+			isTopic() {
+				var str = ""
+				//console.log(this.$store.state.topic);
+				this.topic = this.$store.state.topic;
+				for(var i = 0; i < this.topic.length; i++) {
+					str = this.topic[0]
+				}
+				console.log(str);
+				this.title = str;
 			}
 		}
 	}
@@ -77,8 +81,9 @@
 		background: linear-gradient(45deg, lightblue, #00ffff);
 		border-radius: r(50);
 	}
-	p{
-		font:38px/40px "华文行楷";
+	
+	p {
+		font: 38px/40px "华文行楷";
 		text-align: center;
 		color: #DF5000;
 	}
