@@ -1,4 +1,5 @@
-import request from "./http"
+import request from "./http";
+import mock from  "@/mock"
 
 class Apis{
 	getPhp() {
@@ -20,6 +21,13 @@ class Apis{
             method: 'get',
             url: '/recommend/53115e30173bfacb4904897e'
         });
+    }
+   
+   //测试mock与ajax拦截
+    login(data){
+        return mock.get("/login",{
+          params: data
+        })
     }
 }
 export default new Apis();
